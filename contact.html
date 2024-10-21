@@ -6,6 +6,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Website</title>
 
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- BoxIcons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header bg-pink-100" id="header">
+        <nav class="container mx-auto flex justify-between items-center p-5">
+            <a href="index.html" class="flex items-center text-pink-700">
+                <i class="bx bxs-shopping-bags text-2xl"></i>
+                <span class="ml-2 text-xl font-bold">Shopper's Hub</span>
+            </a>
+
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav_link text-pink-700 hover:text-pink-500">Home</a>
+                <a href="shop.html" class="nav_link text-pink-700 hover:text-pink-500">Shop</a>
+                <a href="cart.html" class="nav_link text-pink-700 hover:text-pink-500">Cart</a>
+                <a href="blog.html" class="nav_link text-pink-700 hover:text-pink-500">Blog</a>
+                <a href="faq.html" class="nav_link text-pink-700 hover:text-pink-500">Faq's</a>
+                <a href="contact2.html" class="nav_link text-pink-700 hover:text-pink-500">Contact</a>
+            </div>
+
+            <div class="flex space-x-4">
+                <div class="text-pink-700 cursor-pointer">
+                    <i class="bx bx-user text-xl"></i>
+                </div>
+                <div class="text-pink-700 cursor-pointer">
+                    <i class="bx bx-shopping-bag text-xl"></i>
+                </div>
+                <div class="text-pink-700 cursor-pointer md:hidden">
+                    <i class="bx bx-menu text-xl"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <div class="cart bg-white fixed top-0 right-0 h-full w-full sm:w-1/3 shadow-lg p-4 z-50 hidden" id="cart">
+        <i class="bx bx-x text-2xl cursor-pointer text-pink-700" id="cart-close"></i>
+        <h2 class="text-2xl font-bold text-pink-700 mb-4">My Cart</h2>
+        <div class="cart_container space-y-4">
+            <article class="flex items-center space-x-4">
+                <img src="images/windbreaker-1.jpg" alt="" class="w-16 h-16 rounded-lg">
+                <div class="flex-1">
+                    <h3 class="font-semibold">Windbreaker</h3>
+                    <span class="text-gray-500">$12</span>
+                </div>
+                <div class="flex space-x-2 items-center">
+                    <button class="text-pink-700">
+                        <i class="bx bx-minus"></i>
+                    </button>
+                    <span>1</span>
+                    <button class="text-pink-700">
+                        <i class="bx bx-plus"></i>
+                    </button>
+                </div>
+                <button class="text-red-600">
+                    <i class="bx bx-trash-alt"></i>
+                </button>
+            </article>
+            <!-- Add more cart items similarly -->
+        </div>
+        <div class="flex justify-between mt-6 text-pink-700">
+            <span>3 items</span>
+            <span class="font-bold">$28</span>
+        </div>
+    </div>
+
+    <!-- Login Section -->
+    <div class="login bg-white fixed top-0 right-0 h-full w-full sm:w-1/3 shadow-lg p-4 z-50 hidden" id="login">
+        <i class="bx bx-x text-2xl cursor-pointer text-pink-700" id="login-close"></i>
+        <h2 class="text-2xl font-bold text-pink-700 mb-6">Login</h2>
+        <form class="space-y-4">
+            <div>
+                <label for="email" class="block text-sm text-gray-700">Email</label>
+                <input type="email" id="email" class="w-full border border-gray-300 rounded-lg p-2" placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="password" class="block text-sm text-gray-700">Password</label>
+                <input type="password" id="password" class="w-full border border-gray-300 rounded-lg p-2" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="w-full bg-pink-500 text-white py-2 rounded-lg">Sign In</button>
+            <p class="text-sm text-gray-600 mt-4">Not a member? <a href="registration.html" class="text-pink-500">Sign up now</a></p>
+        </form>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10">
+        <div class="bg-gradient-to-r from-pink-50 to-pink-100 shadow-xl rounded-lg p-6 md:p-10">
+            <div class="flex flex-col md:flex-row">
+                <!-- Left Section (Contact Information) -->
+                <div class="md:w-1/3 bg-pink-500 text-white p-8 rounded-lg mb-6 md:mb-0 md:mr-6">
+                    <h2 class="text-3xl font-bold mb-4">Let's Get in Touch</h2>
+                    <p class="mb-6">We’re open to any suggestions or just to have a chat.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                            <p class="ml-3">Road 123, Salimpur, Chattogram</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                            <p class="ml-3">Phone: 0124******</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <p class="ml-3">Email: contact123@gmail.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-youtube text-xl"></i>
+                            <p class="ml-3">Channel: www.contact123.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section (Contact Form) -->
+                <div class="md:w-2/3 bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Get in Touch</h2>
+                    <form class="space-y-6">
+                        <div class="flex flex-col md:flex-row md:space-x-4">
+                            <div class="w-full md:w-1/2">
+                                <label for="first-name" class="block text-sm text-gray-700">First Name</label>
+                                <input type="text" id="first-name" class="w-full border border-gray-300 rounded-lg p-3" placeholder="Enter your first name">
+                            </div>
+                            <div class="w-full md:w-1/2 mt-4 md:mt-0">
+                                <label for="last-name" class="block text-sm text-gray-700">Last Name</label>
+                                <input type="text" id="last-name" class="w-full border border-gray-300 rounded-lg p-3" placeholder="Enter your last name">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm text-gray-700">Subject</label>
+                            <input type="text" id="subject" class="w-full border border-gray-300 rounded-lg p-3" placeholder="Enter your subject">
+                        </div>
+                        <div>
+                            <label for="email-id" class="block text-sm text-gray-700">Email</label>
+                            <input type="email" id="email-id" class="w-full border border-gray-300 rounded-lg p-3" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm text-gray-700">Message</label>
+                            <textarea id="message" class="w-full border border-gray-300 rounded-lg p-3 h-32 resize-none" placeholder="Type your message here"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-pink-500 text-white py-2 rounded-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+
     <!-- BoxIcons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
