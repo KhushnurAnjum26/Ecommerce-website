@@ -111,6 +111,101 @@ window.addEventListener('scroll', scrollUp);
 
 
 
+
+
+
+
+
+
+
+
+
+ // Set the date we're counting down to (e.g., 7 days from now)
+ const targetDate = new Date().getTime() + (8 * 24 * 60 * 60 * 1000); // 7 days from now
+
+ // Function to update the countdown every second
+ function updateCountdown() {
+     const now = new Date().getTime();
+     const timeDifference = targetDate - now;
+
+     // Calculate time components
+     const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+     const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+     // Update the HTML elements with the new values
+     document.getElementById("days").innerText = days.toString().padStart(2, '0');
+     document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+     document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+     document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+     // Stop the countdown when the target date is reached
+     if (timeDifference < 0) {
+         clearInterval(countdownInterval);
+         document.getElementById("days").innerText = '00';
+         document.getElementById("hours").innerText = '00';
+         document.getElementById("minutes").innerText = '00';
+         document.getElementById("seconds").innerText = '00';
+     }
+ }
+
+ // Run updateCountdown every second
+ const countdownInterval = setInterval(updateCountdown, 1000);
+
+
+
+
+// Set the date we're counting down to (e.g., 7 days from now)
+const targetDate2 = new Date().getTime() + (7 * 24 * 60 * 60 * 1000); // 7 days from now
+
+// Function to update the countdown every second
+function updateCountdown2() {
+    const now2 = new Date().getTime();
+    const timeDifference2 = targetDate2 - now2;
+
+    // Calculate time components
+    const days2 = Math.floor(timeDifference2 / (1000 * 60 * 60 * 24));
+    const hours2 = Math.floor((timeDifference2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes2 = Math.floor((timeDifference2 % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds2 = Math.floor((timeDifference2 % (1000 * 60)) / 1000);
+
+    // Update the HTML elements with the new values
+    document.getElementById("days2").innerText = days2.toString().padStart(2, '0');
+    document.getElementById("hours2").innerText = hours2.toString().padStart(2, '0');
+    document.getElementById("minutes2").innerText = minutes2.toString().padStart(2, '0');
+    document.getElementById("seconds2").innerText = seconds2.toString().padStart(2, '0');
+
+    // Stop the countdown when the target date is reached
+    if (timeDifference2 < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("days2").innerText = '00';
+        document.getElementById("hours2").innerText = '00';
+        document.getElementById("minutes2").innerText = '00';
+        document.getElementById("seconds2").innerText = '00';
+    }
+}
+
+// Run updateCountdown every second
+const countdownInterval2 = setInterval(updateCountdown2, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // =============Details Section=====================
 
 

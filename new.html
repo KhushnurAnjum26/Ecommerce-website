@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin Dashboard</title>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Wrapper -->
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-teal-800 text-white h-screen md:relative md:flex hidden md:block">
+            <div class="p-6">
+                <h1 class="text-2xl font-semibold">Admin Panel</h1>
+            </div>
+            <nav class="mt-6">
+                <ul>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Dashboard</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Product</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Product Categories</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Categories</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Boxes Section</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Slider</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">View Customer</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">View Order</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">View Payments</a></li>
+                    <li class="p-3 hover:bg-teal-700"><a href="#">Users</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="bg-white shadow p-4 flex justify-between items-center">
+                <button id="toggleSidebar" class="text-teal-700 md:hidden focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <button class="bg-teal-700 text-white px-4 py-2 rounded">Rakesh Kumar</button>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="p-6">
+                <!-- Dashboard Boxes -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-blue-500 text-white p-4 rounded-lg shadow-md">
+                        <h3 class="text-2xl">6</h3>
+                        <p>Products</p>
+                        <a href="#" class="text-white underline">View Details</a>
+                    </div>
+                    <div class="bg-green-500 text-white p-4 rounded-lg shadow-md">
+                        <h3 class="text-2xl">0</h3>
+                        <p>Customers</p>
+                        <a href="#" class="text-white underline">View Details</a>
+                    </div>
+                    <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-md">
+                        <h3 class="text-2xl">44</h3>
+                        <p>Product Categories</p>
+                        <a href="#" class="text-white underline">View Details</a>
+                    </div>
+                    <div class="bg-red-500 text-white p-4 rounded-lg shadow-md">
+                        <h3 class="text-2xl">44</h3>
+                        <p>Orders</p>
+                        <a href="#" class="text-white underline">View Details</a>
+                    </div>
+                </div>
+
+                <!-- New Orders Table -->
+                <div class="mt-8">
+                    <h2 class="text-xl font-semibold mb-4">New orders</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white shadow-md rounded-lg">
+                            <thead>
+                                <tr class="bg-blue-500 text-white">
+                                    <th class="py-2 px-4">Order No</th>
+                                    <th class="py-2 px-4">Customer Email</th>
+                                    <th class="py-2 px-4">Invoice No</th>
+                                    <th class="py-2 px-4">Product Id</th>
+                                    <th class="py-2 px-4">Total</th>
+                                    <th class="py-2 px-4">Date</th>
+                                    <th class="py-2 px-4">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-4 py-2">#12345</td>
+                                    <td class="border px-4 py-2">customer@example.com</td>
+                                    <td class="border px-4 py-2">INV001</td>
+                                    <td class="border px-4 py-2">PROD001</td>
+                                    <td class="border px-4 py-2">$100.00</td>
+                                    <td class="border px-4 py-2">2024-10-23</td>
+                                    <td class="border px-4 py-2">Pending</td>
+                                </tr>
+                                <!-- More rows can be added -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar Toggle for Mobile
+        const toggleSidebar = document.getElementById('toggleSidebar');
+        const sidebar = document.getElementById('sidebar');
+        
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
