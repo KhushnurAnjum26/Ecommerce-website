@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Homepage</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Custom CSS for the background image */
+    body {
+      background-image: url('/assets/img/bg.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+
+    /* Animation styles */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+    }
+
+    .slide-up {
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+
+    .slide-up.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .zoom-in {
+      transform: scale(0.9);
+      opacity: 0;
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+
+    .zoom-in.visible {
+      transform: scale(1);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="lg:mx-24">
+
+  <!-- Main Container with a Transparent Overlay to Help Readability -->
+  <div class=" min-h-screen">
+
+
+    <!-- Navbar -->
+    <header class="">
+      <div class="container fixed top-0 z-10 mx-auto px-4 py-4 flex justify-between items-center slide-up">
+        <div class="inline-flex items-center justify-center space-x-2">
+          <i class='bx bxs-shopping-bags text-2xl'></i>
+          <h1 class="text-xl font-semibold text-gray-800  lg:mr-6">Shopper's Hub</h1>
+        </div>
+
+        <!-- Hamburger Icon (Visible on small screens) -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav Items (Hidden on small screens) -->
+        <nav class="hidden md:flex space-x-6 lg:mr-40">
+          <a href="INDEX1.html" class="text-black text-lg font-semibold hover:text-gray-900">Home</a>
+          <a href="product-shop.html" class="text-black text-lg font-semibold hover:text-gray-900">Shop</a>
+          <a href="about.html" class="text-black text-lg font-semibold hover:text-gray-900">About</a>
+          <a href="blog.html" class="text-black text-lg font-semibold hover:text-gray-900">Blog</a>
+          <a href="faq.html" class="text-black text-lg font-semibold hover:text-gray-900">Faq</a>
+          <a href="contact.html" class="text-black text-lg font-semibold hover:text-gray-900">Contact</a>
+        </nav>
+
+        <!-- Login and Cart Button -->
+        <div class="hidden md:flex items-center space-x-4 lg:mr-44">
+          <a href="login.html" class="text-black hover:text-gray-900 text-2xl"><i class='bx bxs-user'></i></a>
+          <div class=" text-black px-4 py-2 rounded text-2xl inline-flex"><i class='bx bxs-cart'></i><sup
+              class="mt-4">0</sup></div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Visible when toggled) -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <nav class="bg-white space-y-2 py-4 px-4 mt-12 fade-in">
+          <a href="index2.html" class="block text-black hover:text-gray-900">Home</a>
+          <a href="shop.html" class="block  text-black hover:text-gray-900">Shop</a>
+          <a href="#" class="block  text-black hover:text-gray-900">About</a>
+          <a href="#" class="block  text-black hover:text-gray-900">Contact</a>
+          <a href="login.html" class="block  text-black  hover:text-gray-900 ">Login</a>
+          <button class=" text-black text-2xl  w-full py-2 mt-2 rounded"><i
+              class='bx bxs-cart'></i><sup>0</sup></button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="relative h-auto md:h-96 mt-24 bg-cover bg-center zoom-in"
+      style="background-image: url('/assets/img/showcase-img-6.jpg');">
+      <div class="absolute inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+        <div class="text-center p-4">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Upgrade Your Wardrobe</h2>
+          <p class="text-md md:text-lg lg:text-xl text-gray-300 mt-2">Explore our new arrivals and exclusive deals!</p>
+          <a href="details.html"
+            class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition duration-300">
+            View Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Features Section -->
+    <section class="container mx-auto px-4 py-8 md:py-16 slide-up">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-black">Why Shop With Us</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center">
+        <div class="bg-white p-4 md:p-6 rounded shadow bg-opacity-90">
+          <i class='bx bxs-truck text-black text-3xl md:text-4xl mb-2 md:mb-4'></i>
+          <h3 class="text-lg md:text-xl font-semibold">Free Shipping</h3>
+          <p class="text-gray-500 mt-1 md:mt-2">On orders over $50</p>
+        </div>
+        <div class="bg-white p-4 md:p-6 rounded shadow bg-opacity-90">
+          <i class='bx bxs-package text-black text-3xl md:text-4xl mb-2 md:mb-4'></i>
+          <h3 class="text-lg md:text-xl font-semibold">Easy Returns</h3>
+          <p class="text-gray-500 mt-1 md:mt-2">30-day return policy</p>
+        </div>
+        <div class="bg-white p-4 md:p-6 rounded shadow bg-opacity-90">
+          <i class='bx bx-headphone text-black text-3xl md:text-4xl mb-2 md:mb-4'></i>
+          <h3 class="text-lg md:text-xl font-semibold">24/7 Support</h3>
+          <p class="text-gray-500 mt-1 md:mt-2">Always here to help</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <div class="container2 bg-gray-200 pt-10 pb-8 mt-16 mb-24 zoom-in">
+      <!-- Tab Navigation -->
+      <div
+        class="flex flex-col md:flex-col lg:flex-row md:space-x-2 lg:space-x-2 space-y-4 sm:space-y-4 md:space-y-4 lg:space-y-0 mb-6 lg:mx-0 items-center justify-center">
+
+        <button
+          class="tab-button px-8 md:px-8 lg:px-8 py-4 border-2 border-black text-black text-xl font-semibold bg-gray-200 rounded-md hover:bg-gray-300"
+          data-tab="featured">Featured</button>
+        <button
+          class="tab-button px-10 md:px-10 lg:px-8 py-4 border-2 border-black text-black text-xl font-semibold bg-gray-200 rounded-md hover:bg-gray-300"
+          data-tab="popular">Popular</button>
+        <button
+          class="tab-button px-6 md:px-6 lg:px-8 py-4 border-2 border-black text-black text-xl font-semibold bg-gray-200 rounded-md hover:bg-gray-300"
+          data-tab="new">New
+          added</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div
+        class="flex bg-gray-200 flex-col md:flex-col lg:flex-row  mb-12   lg:space-x-8 mx-0 md:mx-52 lg:mx-0 space-y-0 sm:space-y-0 md:space-y-4 lg:space-y-0 ">
+        <!-- Featured Product Card -->
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group sm:w-80 md:w-96 "
+          data-category="featured">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg.5.jpg" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Colorful Pattern Shirts</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black " fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+
+
+
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32  flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="featured">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg2.webp" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black " fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="featured">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg6.jpg" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Yellow shirt</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="featured">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg7.webp" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Popular Product Card -->
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="popular">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/showcase-img-9.jpg" alt="Product Image"
+            class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="popular">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg7.webp" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="popular">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg4.webp" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-16 lg:ml-32 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button class="p-2 bg-gray-200 text-black rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="popular">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg9.webp" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-10 lg:ml-24 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button
+              class="p-2 bg-gray-200 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- New Added Product Card -->
+
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="new">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/showcase-img-3.jpg" alt="Product Image"
+            class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Leather Bag</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-10 lg:ml-24 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button
+              class="p-2 bg-gray-200 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="new">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/product-13-2.jpg" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Floral Printed Bag</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-10 lg:ml-24 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button
+              class="p-2 bg-gray-200 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="new">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/aboutImg7.webp" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Black Pattern Dress</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-10 lg:ml-24 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button
+              class="p-2 bg-gray-200 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-card bg-white p-4 rounded-lg shadow-lg relative group  sm:w-80 md:w-96 lg:w-[200px]"
+          data-category="new">
+          <span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs">Hot</span>
+          <img src="/assets/img/product-10-2.jpg" alt="Product Image" class="w-full h-64 object-cover rounded-lg mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-gray-500">Clothing</span>
+            <div class="flex items-center space-x-1">
+              <span class="text-yellow-400">★★★★☆</span>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Print Pattern Shoes</h3>
+          <div class="flex items-center space-x-20 mb-4 ">
+            <div class="flex space-x-4">
+              <span class="text-green-600 text-lg">$238.85</span>
+              <span class="text-gray-500 line-through">$345.99</span>
+            </div>
+
+            <div> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 " fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m-.4 8l1.8 9h12.2M7 16a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Hover Icons for Favorite and Compare -->
+          <div
+            class="absolute -mt-72 lg:-mt-72 ml-20 md:ml-10 lg:ml-24 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Favorite Icon -->
+            <button
+              class="p-2 bg-gray-200 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </button>
+            <!-- Compare Icon -->
+            <button
+              class="p-2 bg-gray-200 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 13H5v-2h14v2zM5 7h14v2H5V7zm0 8h14v2H5v-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Top Categories Section -->
+    <section class="bg-white py-16 zoom-in">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">Top Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="relative">
+            <img src="/assets/img/category-1.jpg" class="w-full h-72 object-cover rounded-lg" alt="Category 1">
+            <div class="absolute inset-0 bg-black opacity-25"></div>
+            <h3 class="absolute inset-x-0 bottom-4 text-2xl font-semibold text-white">Men's Fashion</h3>
+          </div>
+          <div class="relative">
+            <img src="/assets/img/category-7.jpg" class="w-full h-72 object-cover rounded-lg" alt="Category 2">
+            <div class="absolute inset-0 bg-black opacity-25"></div>
+            <h3 class="absolute inset-x-0 bottom-4 text-2xl font-semibold text-white">Women's Fashion</h3>
+          </div>
+          <div class="relative">
+            <img src="/assets/img/category-2.jpg" class="w-full h-72 object-cover rounded-lg" alt="Category 3">
+            <div class="absolute inset-0 bg-black opacity-25"></div>
+            <h3 class="absolute inset-x-0 bottom-4 text-2xl font-semibold text-white">Accessories</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-100 py-16 fade-in">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">What Our Customers Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded shadow-lg">
+            <p class="italic text-gray-600">"Amazing products! Super fast delivery and top-notch quality.
+              I’ll definitely order again."</p>
+            <h3 class="mt-4 font-semibold">- John Doe</h3>
+          </div>
+          <div class="bg-white p-6 rounded shadow-lg">
+            <p class="italic text-gray-600">"The customer service is excellent. They helped me find the
+              perfect gift!"</p>
+            <h3 class="mt-4 font-semibold">- Jane Smith</h3>
+          </div>
+          <div class="bg-white p-6 rounded shadow-lg">
+            <p class="italic text-gray-600">"I'm a regular customer because of their fantastic deals and
+              quality."</p>
+            <h3 class="mt-4 font-semibold">- Alex Brown</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center slide-up">
+      <img src="/assets/img/location.jpg" alt="Our Mission" class="w-full  md:w-1/2 h-96 rounded-lg shadow-lg">
+      <div class="md:ml-12 mt-8 md:mt-0 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+        <p class="text-black">Our mission is to provide high-quality products that make you feel your best. We
+          are committed to sustainability and strive to make a positive impact on the world, one product at a
+          time.</p>
+        <button
+          class="mt-6 bg-tranparent border-2 border-black text-black text-xl font-semibold px-6 py-3 rounded">Learn
+          More</button>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="bg-gray-200 py-16 zoom-in">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Stay Updated with Our Newsletter</h2>
+        <p class="text-gray-700 mb-6">Subscribe to receive updates, access to exclusive deals, and more.</p>
+        <form class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+          <input type="email" placeholder="Enter your email" class="w-full md:w-1/3 px-4 py-2 rounded border-gray-300">
+          <button class="bg-tranparent border-2 border-black text-black px-6 py-2 rounded ">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Instagram Gallery Section -->
+    <section class="bg-tranparent py-16 fade-in">
+      <div class="container mx-auto px-4 text-center text-white">
+        <h2 class="text-3xl font-bold mb-8">Follow Us on Instagram</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Sample Instagram Post -->
+          <div><img src="/assets/img/aboutImg10.jpg" class="w-full h-64 object-cover rounded-lg" alt="Instagram Post">
+          </div>
+          <div><img src="/assets/img/aboutImg1.webp" class="w-full h-64 object-cover rounded-lg" alt="Instagram Post">
+          </div>
+          <div><img src="/assets/img/aboutImg4.webp" class="w-full h-64 object-cover rounded-lg" alt="Instagram Post">
+          </div>
+          <div><img src="/assets/img/aboutImg10.jpg" class="w-full h-64 object-cover rounded-lg" alt="Instagram Post">
+          </div>
+        </div>
+        <button class="mt-6 bg-white text-gray-800 px-6 py-3 rounded">Follow Us</button>
+      </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="bg-gray-100 py-16 fade-in">
+      <div class="container mx-auto px-4 text-center text-white">
+        <h2 class="text-3xl text-black font-bold mb-4">Special Offers Just for You</h2>
+        <p class="text-gray-600 text-xl font-normal mb-6">Don't miss out on our latest deals and exclusive offers!</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Sample Offer Card -->
+          <div class="bg-white p-6 rounded shadow-lg w-full h-full"
+            style="background: url('/assets/img/sells.png') center center; background-size: cover;">
+            <h3 class="text-2xl font-semibold text-black">Buy 1 Get 1 Free</h3>
+            <p class="text-black text-lg font-medium mt-2">Available on selected items only. Grab yours while stocks
+              last!</p>
+            <button class="mt-4 bg-black text-white px-6 py-2 rounded">Shop Now</button>
+          </div>
+
+          <!-- Repeat for more offers -->
+          <div class="bg-white p-6 rounded shadow-lg w-full h-full"
+            style="background: url('/assets/img/product.webp') center center; background-size: cover;">
+            <h3 class="text-2xl font-semibold text-white">Buy 1 Get 1 Free</h3>
+            <p class="text-white text-lg font-medium mt-2">Available on selected items only. Grab yours while stocks
+              last!</p>
+            <button class="mt-4 bg-black text-white px-6 py-2 rounded">Shop Now</button>
+          </div>
+          <!-- Repeat for more offers -->
+          <div class="bg-white p-6 rounded shadow-lg w-full h-full"
+            style="background: url('/assets/img/img11.jpg') center center; background-size: cover;">
+            <h3 class="text-2xl font-semibold text-black">Buy 1 Get 1 Free</h3>
+            <p class="text-black text-lg font-medium mt-2">Available on selected items only. Grab yours while stocks
+              last!</p>
+            <button class="mt-4 bg-black text-white px-6 py-2 rounded">Shop Now</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="mt-8 mb-16 flex flex-col lg:flex-row mx-4 gap-6">
+      <div class="deals_section mt-12 bg-cover bg-center w-full h-96 px-6 sm:px-8 pt-10 mx-auto"
+          style="background-image: url('/assets/img/shoppingBag1.jpg'); background-size: cover;">
+          <h1 class="text-xl sm:text-2xl font-medium text-white">Deal of the Day</h1>
+          <p class="text-sm sm:text-base font-medium text-white">Limited quantities</p>
+          <h2 class="mt-2 mb-2 text-white sm:text-lg font-medium ">
+              Summer Collection New <br>Modern Design
+          </h2>
+          <div class="flex gap-2 mb-2">
+              <p class="text-red-700 text-base sm:text-lg font-medium">$139.00</p>
+              <p class=" text-white sm:text-lg font-medium line-through">$160.99</p>
+          </div>
+          <p class="text-sm sm:text-base font-medium text-gray-200 mb-2">Hurry Up! Offer Ends In:</p>
+          <div class="flex gap-4 sm:gap-8">
+              <div>
+                  <div class="flex gap-2 sm:gap-4">
+                      <p id="days" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">02</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-300 text-sm sm:text-base font-medium">Days</p>
+              </div>
+              <div>
+                  <div class="flex gap-2">
+                      <p id="hours" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">22</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-300 text-sm sm:text-base font-medium">Hours</p>
+              </div>
+              <div>
+                  <div class="flex gap-2">
+                      <p id="minutes" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">57</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-300 text-sm sm:text-base font-medium">Mins</p>
+              </div>
+              <div>
+                  <div class="flex gap-2">
+                      <p id="seconds" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">24</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-300 text-sm sm:text-base font-medium">Sec</p>
+              </div>
+          </div>
+          <button class="btnDeals text-sm sm:text-lg text-white bg-green-700 font-medium border-2 border-green-600 w-28 sm:w-32 h-8 rounded-sm mt-4 sm:mt-6 hover:bg-white hover:text-green-700">
+              Shop Now
+          </button>
+      </div>
+      <div class="deals_section2 mt-12 bg-cover bg-center no-repeat w-full h-96 px-6 sm:px-8 pt-10 mx-auto "
+          style="background-image: url('/assets/img/bag3.avif'); background-size: cover;">
+          <h1 class="text-xl sm:text-2xl font-medium text-green-700">Women Clothing</h1>
+          <p class="text-sm sm:text-base font-medium text-black">Limited quantities</p>
+          <h2 class="mt-2 mb-2 text-base sm:text-lg font-medium text-gray-700">
+              Try Something new on<br>Vacation
+          </h2>
+          <div class="flex gap-2 mb-2">
+              <p class="text-red-700 text-base sm:text-lg font-medium">$169.00</p>
+              <p class="text-gray-8 text-base sm:text-lg font-medium line-through">$178.99</p>
+          </div>
+          <p class="text-sm sm:text-base font-medium text-gray-700 mb-2">Hurry Up! Offer Ends In:</p>
+          <div class="flex gap-4 sm:gap-8">
+              <div>
+                  <div class="flex gap-2 sm:gap-4">
+                      <p id="days2" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">02</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-700 text-sm sm:text-base font-medium">Days</p>
+              </div>
+              <div>
+                  <div class="flex gap-2">
+                      <p id="hours2" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">22</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-700 text-sm sm:text-base font-medium">Hours</p>
+              </div>
+              <div>
+                  <div class="flex gap-2">
+                      <p id="minutes2" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">57</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-700 text-sm sm:text-base font-medium">Mins</p>
+              </div>
+              <div>
+                  <div class="flex gap-2">
+                      <p id="seconds2" class="text-base sm:text-lg font-medium text-white w-8 sm:w-10 h-8 bg-green-800 text-center rounded-sm">24</p>
+                      <p>:</p>
+                  </div>
+                  <p class="text-gray-700 text-sm sm:text-base font-medium">Sec</p>
+              </div>
+          </div>
+          <button class="btnDeals text-sm sm:text-lg text-white bg-green-700 font-medium border-2 border-green-700 w-28 sm:w-32 h-8 rounded-sm mt-4 sm:mt-6 hover:bg-white hover:text-green-700">
+              Shop Now
+          </button>
+      </div>
+  </section>
+  
+
+
+    <!-- Footer -->
+    <footer class="text-black bg-tranparent backdrop-blur-md text-base py-12 mt-16 lg:px-24 zoom-in">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <!-- About Us -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+          <p class="text-black text-lg font-medium">We are a leading e-commerce platform offering a wide range of
+            products to
+            suit your needs. Quality and customer satisfaction are our top priorities.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-black text-lg font-medium hover:text-white">Home</a></li>
+            <li><a href="#" class="text-black text-lg font-medium hover:text-white">Shop</a></li>
+            <li><a href="#" class="text-black text-lg font-medium hover:text-white">About</a></li>
+            <li><a href="#" class="text-black text-lg font-medium hover:text-white">Contact</a></li>
+            <li><a href="#" class="text-black text-lg font-medium hover:text-white">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+          <p class="text-gray-700 text-lg font-medium">123 E-commerce St, Suite 101</p>
+          <p class="text-gray-700 text-lg font-medium">City, Country</p>
+          <p class="text-gray-700 text-lg font-medium">Email: support@example.com</p>
+          <p class="text-gray-700 text-lg font-medium">Phone: +123 456 7890</p>
+        </div>
+
+        <!-- Follow Us & Payment Methods -->
+        <div class="flex flex-col">
+          <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+          <div class="flex md: space-x-2 lg:space-x-4 mb-6">
+            <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-linkedin-square'></i></a>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">We Accept</h3>
+          <div class="flex space-x-4">
+            <img src="/assets/img/payment-method.png" alt="Visa" class="inline-block">
+            <!-- Additional payment images can be uncommented here -->
+            <!-- <img src="https://via.placeholder.com/50x30" alt="MasterCard" class="inline-block">
+              <img src="https://via.placeholder.com/50x30" alt="PayPal" class="inline-block">
+              <img src="https://via.placeholder.com/50x30" alt="American Express" class="inline-block"> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 mt-8 border-t border-gray-700 pt-6 text-center text-black text-lg font-medium">
+        <p>&copy; 2024 ShopLogo. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+  <script>
+    // JavaScript for toggling the mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Only animate once when it enters
+          }
+        });
+      });
+
+      document.querySelectorAll(".fade-in, .slide-up, .zoom-in").forEach((el) => observer.observe(el));
+    });
+
+
+
+
+
+
+
+    // Function to handle tab switching
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const tabCategory = button.getAttribute('data-tab');
+
+        // Show/hide products based on the selected category
+        document.querySelectorAll('.product-card').forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (category === tabCategory) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Update button styles
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('bg-green-500', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-600');
+        });
+        button.classList.remove('bg-gray-200', 'text-gray-600');
+        button.classList.add('bg-green-500', 'text-white');
+      });
+    });
+
+    // Initialize by showing only 'featured' products
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (card.getAttribute('data-category') !== 'featured') {
+        card.style.display = 'none';
+      }
+
+
+    });
+
+    // ===========Deals section clock added using js===============
+
+    // Set the date we're counting down to (e.g., 7 days from now)
+    const targetDate = new Date().getTime() + (8 * 24 * 60 * 60 * 1000); // 7 days from now
+
+    // Function to update the countdown every second
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeDifference = targetDate - now;
+
+      // Calculate time components
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      // Update the HTML elements with the new values
+      document.getElementById("days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+      // Stop the countdown when the target date is reached
+      if (timeDifference < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("days").innerText = '00';
+        document.getElementById("hours").innerText = '00';
+        document.getElementById("minutes").innerText = '00';
+        document.getElementById("seconds").innerText = '00';
+      }
+    }
+
+    // Run updateCountdown every second
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+
+
+
+    // Set the date we're counting down to (e.g., 7 days from now)
+    const targetDate2 = new Date().getTime() + (7 * 24 * 60 * 60 * 1000); // 7 days from now
+
+    // Function to update the countdown every second
+    function updateCountdown2() {
+      const now2 = new Date().getTime();
+      const timeDifference2 = targetDate2 - now2;
+
+      // Calculate time components
+      const days2 = Math.floor(timeDifference2 / (1000 * 60 * 60 * 24));
+      const hours2 = Math.floor((timeDifference2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes2 = Math.floor((timeDifference2 % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds2 = Math.floor((timeDifference2 % (1000 * 60)) / 1000);
+
+      // Update the HTML elements with the new values
+      document.getElementById("days2").innerText = days2.toString().padStart(2, '0');
+      document.getElementById("hours2").innerText = hours2.toString().padStart(2, '0');
+      document.getElementById("minutes2").innerText = minutes2.toString().padStart(2, '0');
+      document.getElementById("seconds2").innerText = seconds2.toString().padStart(2, '0');
+
+      // Stop the countdown when the target date is reached
+      if (timeDifference2 < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("days2").innerText = '00';
+        document.getElementById("hours2").innerText = '00';
+        document.getElementById("minutes2").innerText = '00';
+        document.getElementById("seconds2").innerText = '00';
+      }
+    }
+
+    // Run updateCountdown every second
+    const countdownInterval2 = setInterval(updateCountdown2, 1000);
+
+
+
+
+  </script>
+
+</body>
+
+</html>

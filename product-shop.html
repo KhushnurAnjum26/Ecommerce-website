@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+    <title>productShop</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-image: url('/assets/img/bg.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav {
+            font-size: 20px;
+            font-weight: 600;
+
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            margin-left: 25px;
+
+        }
+
+        
+    /* Animation styles */
+    .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+    }
+
+    .slide-up {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+
+    .slide-up.visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .zoom-in {
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+
+    .zoom-in.visible {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <!--NAV-->
+    <nav class="navbar">
+        <div class="navbar-center slide-up">
+            <div class=" icon inline-flex items-center justify-center space-x-2">
+                <i class='bx bxs-shopping-bags text-2xl'></i>
+                <h1 class="text-xl font-semibold text-gray-800  lg:mr-6">Shopper's Hub</h1>
+            </div>
+            <nav class="nav hidden md:flex md:space-x-2 lg:space-x-6 lg:mr-40">
+                <a href="INDEX1.html" class="text-black text-lg font-semibold hover:text-gray-900">Home</a>
+                <a href="product-shop.html" class="text-black text-lg font-semibold hover:text-gray-900">Shop</a>
+                <a href="about.html" class="text-black text-lg font-semibold hover:text-gray-900">About</a>
+                <a href="blog.html" class="text-black text-lg font-semibold hover:text-gray-900">Blog</a>
+                <a href="faq.html" class="text-black text-lg font-semibold hover:text-gray-900">Faq</a>
+                <a href="contact.html" class="text-black text-lg font-semibold hover:text-gray-900">Contact</a>
+                <a href="login.html" class="text-black hover:text-gray-900 text-2xl"><i class='bx bxs-user'></i></a>
+            </nav>
+
+            <!-- Login and Cart Button -->
+            <!-- <div class="hidden md:flex items-center space-x-4 lg:mr-16">
+                <a href="#" class="text-black hover:text-gray-900 text-2xl"><i class='bx bxs-user'></i></a>
+                <div class=" text-black px-4 py-2 rounded text-2xl inline-flex"><i
+                        class='bx bxs-cart'></i><sup class="mt-4">0</sup></div>
+            </div> -->
+            <!-- <span class="nav-icon " >
+                <i class="fas fa-bars "></i>
+            </span> -->
+
+            <div class="cart-btn">
+                <span class="nav-icon">
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <div class="cart-items">0</div>
+            </div>
+
+        </div>
+        </div>
+        <button id="menuButton" class="md:hidden text-xl text-black focus:outline-none">
+            ☰
+        </button>
+        </div>
+        </div>
+
+         <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden  text-black space-y-2  p-4">
+        <a href="INDEX1.html" class="text-black block text-lg font-semibold hover:text-gray-900">Home</a>
+        <a href="product-shop.html" class="text-black block text-lg font-semibold hover:text-gray-900">Shop</a>
+        <a href="about.html" class="text-black block text-lg font-semibold hover:text-gray-900">About</a>
+        <a href="blog.html" class="text-black block text-lg font-semibold hover:text-gray-900">Blog</a>
+        <a href="faq.html" class="text-black block text-lg font-semibold hover:text-gray-900">Faq</a>
+        <a href="contact.html" class="text-black block text-lg font-semibold hover:text-gray-900">Contact</a>
+        <a href="login.html" class="text-black block text-lg font-semibold hover:text-gray-900 hover:text-gray-900 ">Login</a>
+        <button class=" text-black text-2xl  w-full py-2 mt-2 rounded"><i
+                class='bx bxs-cart'></i><sup>0</sup></button>
+    </div>
+    </nav>
+    <!--NAV-->
+    <!--HERO-->
+    <div class="hero" >
+        <div class="banner zoom-in" style="background: url('/assets/img/product-12-2.jpg') no-repeat center;">
+            <h1 class="banner-title">collection</h1>
+            <button class="banner-btn"><a href="shop2.html">shop now</a></button>
+        </div>
+    </div>
+    <!--HERO-->
+    <!--PRODUCTS-->
+    <section class="products fade-in">
+        <div class="section-title">
+            <h2>our products</h2>
+        </div>
+        <div class="products-center">
+            single
+            <aricle class="product">
+                <div class="img-container">
+                    <img src="./images/product-1.jpeg" alt="product" class="product-img">
+                    <button class="bag-btn" data-id="1">
+                        <i class="fas fa-shopping-cart"></i>
+                        add to bag
+                    </button>
+                </div>
+                <h3>product1</h3>
+                <h4>$16</h4>
+            </aricle>
+            single end
+        </div>
+    </section>
+    <!--CART-->
+    <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart">
+                <i class="fas fa-window-close"></i>
+            </span>
+            <h2>your cart</h2>
+            <div class="cart-content">
+
+            </div>
+            <div class="cart-footer">
+                <h3>your total : $ <span class="cart-total">0
+                    </span></h3>
+                <button class="clear-cart banner-btn">clear cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-black bg-white/10 backdrop-blur-md text-base py-12 mt-16 lg:px-24 zoom-in">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- About Us -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+                <p class="text-black text-lg font-medium">We are a leading e-commerce platform offering a wide range of
+                    products to
+                    suit your needs. Quality and customer satisfaction are our top priorities.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-black text-lg font-medium hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-black text-lg font-medium hover:text-white">Shop</a></li>
+                    <li><a href="#" class="text-black text-lg font-medium hover:text-white">About</a></li>
+                    <li><a href="#" class="text-black text-lg font-medium hover:text-white">Contact</a></li>
+                    <li><a href="#" class="text-black text-lg font-medium hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+                <p class="text-gray-700 text-lg font-medium">123 E-commerce St, Suite 101</p>
+                <p class="text-gray-700 text-lg font-medium">City, Country</p>
+                <p class="text-gray-700 text-lg font-medium">Email: support@example.com</p>
+                <p class="text-gray-700 text-lg font-medium">Phone: +123 456 7890</p>
+            </div>
+
+            <!-- Follow Us & Payment Methods -->
+            <div class="flex flex-col">
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <div class="flex md: space-x-2 lg:space-x-4 mb-6">
+                    <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#" class="text-black text-4xl hover:text-white"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">We Accept</h3>
+                <div class="flex space-x-4">
+                    <img src="/assets/img/payment-method.png" alt="Visa" class="inline-block">
+
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="container mx-auto px-4 mt-8 border-t border-gray-700 pt-6 text-center text-black text-lg font-medium">
+            <p>&copy; 2024 ShopLogo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // Only animate once when it enters
+                }
+            });
+        });
+
+        document.querySelectorAll(".fade-in, .slide-up, .zoom-in").forEach((el) => observer.observe(el));
+    });
+
+    </script>
+    <script src="/assets/js/shop.js" type="module"></script>
+</body>
+
+</html>

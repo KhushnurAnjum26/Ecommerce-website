@@ -1,10 +1,10 @@
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: "auto",
   spaceBetween: 30,
-  autoplay: {
-    delay: 1200,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 1200,
+  //   disableOnInteraction: false,
+  // },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -118,7 +118,7 @@ window.addEventListener('scroll', scrollUp);
 
 
 
-
+// ===========Deals section clock added using js===============
 
  // Set the date we're counting down to (e.g., 7 days from now)
  const targetDate = new Date().getTime() + (8 * 24 * 60 * 60 * 1000); // 7 days from now
@@ -188,6 +188,187 @@ function updateCountdown2() {
 
 // Run updateCountdown every second
 const countdownInterval2 = setInterval(updateCountdown2, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//====================Js for about Section======================
+
+
+
+
+  // Function to trigger the text animation of banner
+
+
+
+  function animateText() {
+      const textElement = document.getElementById('animated-text');
+      const text = "About>Shopper's Hub!"; // The text you want to animate
+
+      // Clear any existing content
+      textElement.innerHTML = '';
+
+      // Loop through each character of the text
+      text.split('').forEach((char, index) => {
+        // Create a span for each character
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.classList.add('invisible-text'); // Initially invisible
+
+        // Add each character to the text container
+        textElement.appendChild(span);
+
+        // Add animation with delay for each character
+        setTimeout(() => {
+          span.classList.remove('invisible-text');
+          span.classList.add('fade-in');
+        }, index * 200); // Delay of 100ms per character
+      });
+
+      // Restart the animation after the full text has been animated
+      const totalDuration = text.length * 100 + 1000; // Add extra 1 second delay at the end
+      setTimeout(() => {
+        animateText(); // Call the function again for looping
+      }, totalDuration);
+    }
+
+
+
+    function animateText2() {
+      const textElement3 = document.getElementById('animated-text2');
+      const text3 = "Hawaiian Shirt"; // The text you want to animate
+    
+      // Clear any existing content
+      textElement3.innerHTML = '';
+    
+      // Loop through each character of the text
+      text3.split('').forEach((char, index) => {
+        // Create a span for each character
+        const span3 = document.createElement('span');
+        span3.textContent = char; 
+        span3.classList.add('invisible-text3'); // Initially invisible
+    
+        // Add each character to the text container
+        textElement3.appendChild(span3);
+    
+        // Add animation with delay for each character
+        setTimeout(() => { 
+          span3.classList.remove('invisible-text3');
+          span3.classList.add('fade-in3');
+        }, index * 200); // Delay of 100ms per character
+      });
+    
+      // Restart the animation after the full text has been animated
+      const totalDuration3 = text3.length * 100 + 1000; // Add extra 1 second delay at the end
+      setTimeout(() => { 
+        animateText2(); // Call the function again for looping
+      }, totalDuration3);
+    }
+    
+
+
+
+
+
+    // Function to animate lines of mission
+
+
+    function animateParagraph() {
+      const paragraphElement = document.getElementById('animated-paragraph');
+      const paragraphs = [
+        "This eCommerce platform is designed to enhance the online shopping experience ",
+        " by providing a user-friendly interface, seamless navigation, and secure payment options.",
+        " It aims to connect consumers with a diverse range of products while ensuring .",
+        " efficient order processing and reliable customer support. "
+      ]; // Your multi-line text
+
+      // Clear existing content
+      paragraphElement.innerHTML = '';
+
+      // Function to animate each line
+      const animateLines = (index) => {
+        if (index < paragraphs.length) {
+          const line = document.createElement('div');
+          line.textContent = paragraphs[index];
+          line.classList.add('invisible'); // Initially invisible
+          paragraphElement.appendChild(line);
+
+          // Animate the current line
+          setTimeout(() => {
+            line.classList.remove('invisible');
+            line.classList.add('fade-in2');
+          }, 100); // Start the fade-in effect shortly after adding the line
+
+          // Move to the next line after a delay
+          const lineDuration = 1000; // Time to wait before starting the next line
+          setTimeout(() => {
+            animateLines(index + 1); // Call the next line
+          }, lineDuration + 500); // Delay for the line to be visible
+        } else {
+          // Restart the animation from the beginning
+          setTimeout(() => {
+            animateParagraph(); // Restart the animation
+          }, 1000); // Delay before restarting the whole animation
+        }
+      };
+
+      // Start the animation from the first line
+      animateLines(0);
+    }
+
+
+
+
+
+
+
+    // Trigger the animation when the page loads
+
+
+    // function for shopper's hub
+
+    window.onload = () => {
+      animateText();
+
+
+      // function for hawaian shirt
+
+      animateText2();
+    
+
+
+     // JavaScript to trigger animation on the most sold image when page load
+
+
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.classList.add('animate-up-down'); // Add animation class to start animation
+
+
+
+ // Trigger the animation for mission when the page loads
+
+    animateParagraph();
+
+    
+  };
+
+
+  
+   
+   
+ 
+
+
+
 
 
 

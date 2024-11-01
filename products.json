@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "armor 1",
+        "price": 10.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-5.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "armor 2",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-7.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "armor 3",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-3.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "armor 4",
+        "price": 22.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "armor 5",
+        "price": 88.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-1.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "armor 6",
+        "price": 32.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-4.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "armor 7",
+        "price": 45.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-5.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "armor 8",
+        "price": 33.99,
+        "image": { "fields": { "file": { "url": "/assets/img/category-1.jpg" } } }
+      }
+    }
+  ]
+}

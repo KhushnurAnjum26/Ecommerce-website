@@ -1,0 +1,96 @@
+.checkout{
+    background-image: url("../css/image/bn3.3.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 6%;
+}
+
+
+
+.checkout .row{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+}
+.checkout .row form,
+.checkout .summary{
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    width: 1000px;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+.checkout .row h3{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+.checkout .row form .box{
+    flex: 1 1 20rem;
+}
+.checkout .row form .input{
+    background-color: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    border-radius: .5rem;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    padding: 1rem;
+
+}
+.checkout .row form .flex{
+    display: flex;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.checkout .row form p{
+    text-align: left;
+    padding-top: .5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: gray;
+}
+.checkout .row form span{
+    color: red;
+}
+.checkout .row form .btn{
+    width: 100%;
+}
+
+<!-- 
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem, 1fr));
+    align-items: center;
+}
+.box-container .box{
+    background-color: var(--white-alpha-25);
+    border: 2px solidvar(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    margin: 1rem;
+}
+.chef{
+    padding-left: 4%;
+}
+.chef .box{
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: none;
+    
+}
+.chef .box .img{
+    width: 70%;
+    margin-bottom: -2rem;
+    
+    
+}
+.chef .box p{
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 2rem;
+} -->

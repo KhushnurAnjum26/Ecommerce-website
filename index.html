@@ -23,10 +23,127 @@
   <!-- Daisy ui -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
 
-
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
   <!-- Css Link -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+   
+   .home_description2{
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+  }
+    .home_title2{
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+  }
+  .home_title2 {
+    animation: slideInRight 1.5s ease forwards;
+     animation-delay: 0.5s; /*Delay for a smoother appearance */
+  }
+  .home_subtitle2 {
+    animation: slideInRight 1.5s ease forwards;
+    animation-delay: 0.5s; /* Delay for a smoother appearance */
+  }
+  .home_img2 {
+    animation: slideInLeft 1.5s ease forwards;
+  }
+  .home_buttons {
+    animation: slideInLeft 1.5s ease forwards;
+  }
+
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideTop {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes slideBottom {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInRight {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-left {
+    animation: slideIn 1.5s ease-out forwards;
+  }
+  
+  .slide-right {
+    animation: slideOut 1.5s ease-out forwards;
+  }
+
+  /* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Slide up from 50px below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* No sliding, normal position */
+    }
+}
+
+/* Footer will start hidden */
+.footer {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+  
+  </style>
 </head>
 
 <body>
@@ -35,69 +152,59 @@
 
 
 
-  <header class="header" id="header">
-
-    <nav class=" nav container">
-      <a href="index.html" class="nav_logo">
-        <i class="bx bxs-shopping-bags nav_logo-icon"></i>Shopper's Hub
+  <header class="header " id="header"> 
+    <nav class="nav2  container  mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="nav_logo flex items-center ">
+        <i class="bx bxs-shopping-bags nav_logo-icon "></i>Shopper's Hub
       </a>
-
-      <div class="nav_menu" id="nav_menu">
-        <ul class="nav_list">
+  
+      <div class="nav_menu show-menu" id="nav_menu">
+        <ul class="nav_list flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 lg:space-x-4">
           <li class="nav_item">
             <a href="index.html" class="nav_link active-link">Home</a>
           </li>
-
           <li class="nav_item">
-            <a href="shop.html" class="nav_link ">Shop</a>
+            <a href="shop.html" class="nav_link">Shop</a>
           </li>
-
           <li class="nav_item">
-            <a href="cart.html" class="nav_link ">Cart</a>
+            <a href="cart.html" class="nav_link">Cart</a>
           </li>
-
           <li class="nav_item">
-            <a href="about.html" class="nav_link ">About</a>
+            <a href="about.html" class="nav_link">About</a>
           </li>
-
-
           <li class="nav_item">
-            <a href="blog.html" class="nav_link ">Blog</a>
+            <a href="blog.html" class="nav_link">Blog</a>
           </li>
-
           <li class="nav_item">
-            <a href="faq.html" class="nav_link ">Faq's</a>
+            <a href="faq.html" class="nav_link">FAQ's</a>
           </li>
-
           <li class="nav_item">
-            <a href="contact.html" class="nav_link ">Contact</a>
+            <a href="contact.html" class="nav_link">Contact</a>
           </li>
         </ul>
-
+  
         <div class="nav_close" id="nav_close">
           <i class="bx bx-x"></i>
         </div>
-
       </div>
-
-      <div class="nav_btns">
-
+  
+      <div class="nav_btns flex items-center space-x-4">
         <div class="login_toggle" id="login-button">
           <i class="bx bx-user"></i>
         </div>
-
         <div class="nav-shop" id="cart-shop">
           <i class="bx bx-shopping-bag"></i>
         </div>
-
         <div class="nav_toggle" id="nav_toggle">
           <i class="bx bx-grid-alt"></i>
         </div>
-
       </div>
     </nav>
+  </header>   
 
-  </header>
+  
+
+
 
 
   <!----------Cart----------->
@@ -240,128 +347,35 @@
 
   <!------Main------>
 
-  <main class="main">
+  <main >
     <!-------Home------>
 
-    <section class="home container">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="home_content grid">
-
-              <div class="home_group">
-
-                <img src="/assets/img/aboutImg2.webp" alt="" class="home_img rounded-lg">
-
-                <div class="home_indicator"></div>
-
-                <div class="home_details-img">
-                  <h4 class="home_details-title">The "Cardigan"</h4>
-                  <span class="home_details-subtitle">Woolen</span>
-                </div>
-              </div>
-
-              <div class="home_data">
-
-                <h3 class="home_subtitle">#1 TRENDING ITEM</h3>
-                <h1 class="home_title">ORIGINAL <br> IS NEVER <br> FINISHED!</h1>
-                <p class="home_description">A modern clothing label to provide latest luxurious
-                  collections.
-                  Morally provide truest commitment to exceptional quality
-
-                </p>
-                <div class="home_buttons">
-                  <a href="details.html" class="button">Buy Now</a>
-                  <a href="details.html" class="button-link button-flex">View Details <i
-                      class="bx bx-right-arrow-alt button_icon"></i>
-
-                  </a>
-
-                </div>
-              </div>
-
-
-            </div>
+    <section class=" mt-28">
+      <div class="">
+        <div class="home_content2 flex flex-col md:flex-row lg:flex-row gap-4">
+          <div class="relative flex justify-center">
+            <img src="/assets/img/aboutImg2.webp" alt="" class="home_img2 rounded-lg w-11/12 h-auto lg:w-2/3  lg:ml-16">
+            
+           
           </div>
-          <div class="swiper-slide">
-            <div class="home_content grid">
-
-              <div class="home_group">
-
-                <img src="/assets/img/aboutImg1.webp" alt="" class="home_img rounded-lg">
-
-                <div class="home_indicator"></div>
-
-                <div class="home_details-img">
-                  <h4 class="home_details-title">Jqueezy</h4>
-                  <span class="home_details-subtitle">Ski Suit</span>
-                </div>
+    
+          <section class="flex flex-col justify-center lg:mr-40">
+            <div class="home-content2 text-center">
+              <h3 class="home_subtitle2 mb-4">
+                <span class="text text-green-700 text-2xl font-semibold mr-40"></span>
+              </h3>
+              <h1 class="home_title2 text-3xl lg:text-4xl font-bold mr-4 lg:mr-36">ORIGINAL  IS NEVER <br> FINISHED!</h1>
+              <p class="home_description2 mt-4">A modern clothing label to provide latest luxurious collections. Morally provide truest commitment to exceptional quality.</p>
+              <div class="flex flex-col md:flex-row lg:flex-row items-center justify-center space-y-4 md:space-x-4  lg:space-x-4 mt-6 md:ml-0 lg:-ml-32">
+                <a href="details.html" class="home_title2 button-link button-flex py-2 px-4  bg-green-600 text-white rounded md:mt-4 lg:mt-4">Buy Now</a>
+                <a href="details.html" class="home_title2 button-link button-flex py-2 px-4 border border-green-600 text-green-600 rounded">View Details <i class="bx bx-right-arrow-alt button_icon"></i></a>
               </div>
-
-              <div class="home_data">
-
-                <h3 class="home_subtitle">#2 Top Best duo</h3>
-                <h1 class="home_title">FALL <br> WINTER <br> 2022!</h1>
-                <p class="home_description">A modern clothing label to provide latest luxurious
-                  collections.
-                  Morally provide truest commitment to exceptional quality
-
-                </p>
-                <div class="home_buttons">
-                  <a href="details.html" class="button">Buy Now</a>
-                  <a href="details.html" class="button-link button-flex">View Details <i
-                      class="bx bx-right-arrow-alt button_icon"></i>
-
-                  </a>
-
-                </div>
-              </div>
-
-
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="home_content grid">
-
-              <div class="home_group">
-
-                <img src="/assets/img/aboutImg4.webp" alt="" class="home_img rounded-lg">
-
-                <div class="home_indicator"></div>
-
-                <div class="home_details-img">
-                  <h4 class="home_details-title">Jqueezy</h4>
-                  <span class="home_details-subtitle">Ski Suit</span>
-                </div>
-              </div>
-
-              <div class="home_data">
-
-                <h3 class="home_subtitle">#2 Top Best duo</h3>
-                <h1 class="home_title">FALL <br> WINTER <br> 2022!</h1>
-                <p class="home_description">A modern clothing label to provide latest luxurious
-                  collections.
-                  Morally provide truest commitment to exceptional quality
-
-                </p>
-                <div class="home_buttons">
-                  <a href="details.html" class="button">Buy Now</a>
-                  <a href="details.html" class="button-link button-flex">View Details <i
-                      class="bx bx-right-arrow-alt button_icon"></i>
-
-                  </a>
-
-                </div>
-              </div>
-
-
-            </div>
-          </div>
+          </section>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
       </div>
     </section>
+    
 
 
 
@@ -374,9 +388,7 @@
 
 
 
-
-
-    <div class="container2  mt-10 mb-24 ">
+    <div class="container2  mt-28 mb-24 ">
       <!-- Tab Navigation -->
       <div
         class="flex flex-col md:flex-col lg:flex-row md:space-x-2 lg:space-x-2 space-y-4 sm:space-y-4 md:space-y-4 lg:space-y-0 mb-6 lg:mx-36">
@@ -938,39 +950,7 @@
 
 
 
-    <script>
-      // Function to handle tab switching
-      document.querySelectorAll('.tab-button').forEach(button => {
-        button.addEventListener('click', () => {
-          const tabCategory = button.getAttribute('data-tab');
 
-          // Show/hide products based on the selected category
-          document.querySelectorAll('.product-card').forEach(card => {
-            const category = card.getAttribute('data-category');
-            if (category === tabCategory) {
-              card.style.display = 'block';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          // Update button styles
-          document.querySelectorAll('.tab-button').forEach(btn => {
-            btn.classList.remove('bg-green-500', 'text-white');
-            btn.classList.add('bg-gray-200', 'text-gray-600');
-          });
-          button.classList.remove('bg-gray-200', 'text-gray-600');
-          button.classList.add('bg-green-500', 'text-white');
-        });
-      });
-
-      // Initialize by showing only 'featured' products
-      document.querySelectorAll('.product-card').forEach(card => {
-        if (card.getAttribute('data-category') !== 'featured') {
-          card.style.display = 'none';
-        }
-      });
-    </script>
 
 
 
@@ -988,7 +968,7 @@
 
     <!-- Discount section -->
 
-    <section class="discount_section">
+    <!-- <section class="discount_section">
 
       <div class="discount_container container grid">
         <img src="images/discount_shirt.jpg" alt="" class="discount_img">
@@ -998,7 +978,7 @@
           <a href="" class="button">Go to new</a>
         </div>
       </div>
-    </section>
+    </section> -->
 
 
 
@@ -1009,14 +989,14 @@
 
 
 
-    <section class="new section">
+    <!-- <section class="new section">
       <h2 class="section_title">New Arrivals</h2>
 
       <div class="new_container container">
         <div class="swiper new-swiper">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper"> -->
             <!-- New Content-1 -->
-            <div class="new_content swiper-slide">
+            <!-- <div class="new_content swiper-slide">
               <div class="new_tag">New</div>
               <img src="images/content-1.jpg" alt="" class="new_img">
               <h3 class="new_title">Windbreaker Jacket</h3>
@@ -1029,11 +1009,11 @@
               <a href="details.html" class="button new_button">
                 <i class="bx bx-cart-alt new_icon"></i>
               </a>
-            </div>
+            </div> -->
 
 
             <!-- New Content-2 -->
-            <div class="new_content swiper-slide">
+            <!-- <div class="new_content swiper-slide">
               <div class="new_tag">New</div>
               <img src="images/content-2.jpg" alt="" class="new_img">
               <h3 class="new_title">Air Jordan</h3>
@@ -1046,9 +1026,9 @@
               <a href="details.html" class="button new_button">
                 <i class="bx bx-cart-alt new_icon"></i>
               </a>
-            </div>
+            </div> -->
             <!-- New Content-3 -->
-            <div class="new_content swiper-slide">
+            <!-- <div class="new_content swiper-slide">
               <div class="new_tag">New</div>
               <img src="images/content-3.jpg" alt="" class="new_img">
               <h3 class="new_title">Fur jacket</h3>
@@ -1061,10 +1041,10 @@
               <a href="details.html" class="button new_button">
                 <i class="bx bx-cart-alt new_icon"></i>
               </a>
-            </div>
+            </div> -->
 
             <!-- New Content-4 -->
-            <div class="new_content swiper-slide">
+            <!-- <div class="new_content swiper-slide">
               <div class="new_tag">New</div>
               <img src="images/content-4.jpg" alt="" class="new_img">
               <h3 class="new_title">Nike Hoodie</h3>
@@ -1077,9 +1057,9 @@
               <a href="details.html" class="button new_button">
                 <i class="bx bx-cart-alt new_icon"></i>
               </a>
-            </div>
+            </div> -->
             <!-- New Content-5 -->
-            <div class="new_content swiper-slide">
+            <!-- <div class="new_content swiper-slide">
               <div class="new_tag">New</div>
               <img src="images/content-5.jpg" alt="" class="new_img">
               <h3 class="new_title">Fleece jacket</h3>
@@ -1092,10 +1072,10 @@
               <a href="details.html" class="button new_button">
                 <i class="bx bx-cart-alt new_icon"></i>
               </a>
-            </div>
+            </div> -->
 
             <!-- New Content-6 -->
-            <div class="new_content swiper-slide">
+            <!-- <div class="new_content swiper-slide">
               <div class="new_tag">New</div>
               <img src="images/content-6.jpg" alt="" class="new_img">
               <h3 class="new_title">Fleece jacket</h3>
@@ -1114,7 +1094,7 @@
 
         </div>
       </div>
-    </section>
+    </section> -->
 
 
 
@@ -1348,12 +1328,12 @@
           </div>
         </div>
 
-      
 
-      <button
-        class="btnDeals text-sm sm:text-lg text-white bg-green-700 font-medium border-2 border-green-700 w-28 sm:w-32 h-8 rounded-sm mt-4 sm:mt-6 hover:bg-white hover:text-green-700">
-        Shop Now
-      </button>
+
+        <button
+          class="btnDeals text-sm sm:text-lg text-white bg-green-700 font-medium border-2 border-green-700 w-28 sm:w-32 h-8 rounded-sm mt-4 sm:mt-6 hover:bg-white hover:text-green-700">
+          Shop Now
+        </button>
       </div>
     </section>
 
@@ -1612,7 +1592,80 @@
   </main>
 
 
+  <script>
+    // Function to handle tab switching
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const tabCategory = button.getAttribute('data-tab');
 
+        // Show/hide products based on the selected category
+        document.querySelectorAll('.product-card').forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (category === tabCategory) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Update button styles
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('bg-green-500', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-600');
+        });
+        button.classList.remove('bg-gray-200', 'text-gray-600');
+        button.classList.add('bg-green-500', 'text-white');
+      });
+    });
+
+    // Initialize by showing only 'featured' products
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (card.getAttribute('data-category') !== 'featured') {
+        card.style.display = 'none';
+      }
+
+
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+  const footer = document.querySelector(".footer");
+
+  // Function to check if the footer is in view
+  function isInView() {
+    const footerPosition = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    
+    return footerPosition <= windowHeight;
+  }
+
+  // Function to add the animation class
+  function showFooter() {
+    if (isInView()) {
+      footer.style.opacity = "1";
+      footer.style.transform = "translateY(0)";
+    }
+  }
+
+  // Add event listener for scroll and load to trigger animation
+  window.addEventListener("scroll", showFooter);
+  window.addEventListener("load", showFooter);
+});
+
+
+    
+    var typed = new Typed(".text", {
+      strings: ["#1 TRENDING ITEM", "#1 New Arrivals", "#1 Hot Sales"],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true
+
+
+    });
+
+  
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script src="main.js"></script>
